@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def redirect_to(article)
+    # code here
+  end
+
   def create
     @article = Article.new(article_params)
 
@@ -28,7 +32,7 @@ class ArticlesController < ApplicationController
   def update
     @article = @article.find(params[:id])
 
-    if @articel.update(@article_params)
+    if @article.update(@article_params)
       redirect_to @article
     else
       render :edit , status: :unprocessable_entity
@@ -38,7 +42,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:articel).permit(:title, :body)
+      params.require(:article).permit(:title, :body)
     end
 
 end
