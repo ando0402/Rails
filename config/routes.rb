@@ -37,8 +37,10 @@ Rails.application.routes.draw do
   # respond_to do | format |
   #   format.html {{ redirect_to profile_path }}
   # end
+  # フォーマットによるだし分けが不要ならrespond_toを書かなくて良い
   # redirect_to profile_path
-
+  # redirect_to profile_path, status: 302
+  # redirect_to profile_path, status: :found
   resources :articles
   # get "/articles", to: "articles#index"
   # get "/articles/:id", to: "articles#show"
