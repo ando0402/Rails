@@ -39,3 +39,19 @@ end
 #   published_on: Time.current,
 #   price: 2000,
 # )
+
+# モデルを通してデータ更新(1) 下の処理と同じ
+# Book.create(
+#   name: "Rails Book",
+#   published_on: Time.parse("20191224").ago(2.months),
+#   price: 1000,
+#   publisher: Publisher.find(1),
+# )
+
+# モデルを通してデータ更新(1) 下の処理と同じ
+# book = Book.new
+# book.name = "Rails book"
+# book.published_on = Time.parse("20191224").ago(2.months)
+# book.price = 2980
+# book.publisher = Publisher.find_by(1)
+# book.save
