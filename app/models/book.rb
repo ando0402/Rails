@@ -39,6 +39,14 @@ class Book < ApplicationRecord
     end
   end
 
+  # 価格が5000円以上の時に警告エラー
+  after_destroy if: :high_price? do
+    Rails.logger.info "Book is deleted: #{self.inspect}"
+    Rails.logger.warn "Please check!!"
+  end
+  def high_price?
+    price >= 5000
+  end
 end
 
 
