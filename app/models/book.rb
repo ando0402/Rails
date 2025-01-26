@@ -5,6 +5,8 @@ class Book < ApplicationRecord
   scope :costly, -> { where("price > ?", 3000) }
   scope :written_about, ->(them) { where("name like ?", "%#{them}%")}
   scope :find_price, ->(price) { find_by_price(price) }
+
+  belongs_to :publisher
 end
 
 # rails c 5件データを入れる処理
@@ -15,3 +17,23 @@ end
 #     price: (i*1000),
 #     )
 # end
+
+# 情報登録
+# publisher = Publisher.create(
+#   name: "Gihyo inc.",
+#   address: "Ichigaya",
+# )
+
+#　1.リレーション情報
+# publisher.books << Book.create(
+#   name: "Book 1",
+#   published_on: Time.current,
+#   price: 1000,
+# )
+
+#　2.リレーション情報
+# publisher.books << Book.create(
+#   name: "Book 2",
+#   published_on: Time.current,
+#   price: 2000,
+# )
