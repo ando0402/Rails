@@ -20,7 +20,9 @@ class Book < ApplicationRecord
       "lovely #{matched}"
     end
   end
-
+  after_destroy do
+    Rails.logger.info "Book is deleted: #{self.attributes}"
+  end
   # あるいはメソッドを使って以下のようにも書ける
   # before_validation :add_lovely_to_cat
   #
