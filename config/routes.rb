@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "profiles/show"
+  get "profiles/edit"
+  get "profiles/update"
   resources :tasks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,6 +17,18 @@ Rails.application.routes.draw do
   delete "/books/:id" => "books#destroy"
 
   resources :publishers
+  # resources :profiles
+  # リソースの制限
+  resources :profiles, only: %i[show edit update]
+  # resources :publishers do
+  #   resources :books
+  #   member do
+  #     get 'detail'
+  #   end
+  #   collection do
+  #     get 'search'
+  #   end
+  # end
 
   # Defines the root path route ("/")
   root "articles#index"
