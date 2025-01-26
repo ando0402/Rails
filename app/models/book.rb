@@ -14,7 +14,16 @@ class Book < ApplicationRecord
   validates :name, :price, presence: true
   validates :name, length: { maximum: 25 }
   validates :price, numericality: { greater_than_or_equal_to:  0 }
+  # 独自バリデーション
+  validate do |book|
+    if book.name.include?("exercise")
+      book.errors[:name] << " I dont like exercise."
+    end
+  end
 end
+
+
+
 
 # rails c 5件データを入れる処理
 # (1..5).each do |i|
