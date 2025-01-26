@@ -7,6 +7,8 @@ class Book < ApplicationRecord
   scope :find_price, ->(price) { find_by_price(price) }
 
   belongs_to :publisher
+  has_many :book_authors
+  has_many :authors, through: :book_authors
 end
 
 # rails c 5件データを入れる処理
