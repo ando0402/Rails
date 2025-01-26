@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
     # ログインを確認し、非ログイン時にリダイレクトする処理
   end
 
-  before_action do
-    redirect_to access_denied_path if params[:token].blank?
-  end
+  # before_action do
+  #   redirect_to access_denied_path if params[:token].blank?
+  # end
 
 end

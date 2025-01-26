@@ -7,10 +7,14 @@ class BooksController < ApplicationController
 
   def show
     render :show
-    # @book = Book.find(params[:id])
     # respond_to do |format|
     #   format.html
     #   format.json
+    # end
+    # respondがjsonの場合
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @book }
     # end
   end
 

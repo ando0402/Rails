@@ -33,6 +33,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "articles#index"
 
+  # リダイレクト処理
+  # respond_to do | format |
+  #   format.html {{ redirect_to profile_path }}
+  # end
+  # redirect_to profile_path
 
   resources :articles
   # get "/articles", to: "articles#index"
