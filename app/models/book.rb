@@ -6,9 +6,14 @@ class Book < ApplicationRecord
   scope :written_about, ->(them) { where("name like ?", "%#{them}%")}
   scope :find_price, ->(price) { find_by_price(price) }
 
+  # リレーション
   belongs_to :publisher
   has_many :book_authors
   has_many :authors, through: :book_authors
+
+  validates :name, :price, presence: true
+  validates :name, length: { maximum: 25 }
+  validates :price, numericality: { greater_than_or_equal_to:  0 }
 end
 
 # rails c 5件データを入れる処理
