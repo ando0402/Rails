@@ -47,6 +47,21 @@ class Book < ApplicationRecord
   def high_price?
     price >= 5000
   end
+
+  enum sales_status: {
+    reservation: 0, # 予約受付
+    now_on_sale: 1, # 販売中
+    end_of_print: 2 # 販売終了
+  }
+
+  # enumのデータ入れる場合
+  # Book.create(
+  #   name: "enum Book 1",
+  #   sales_status: "now_on_sale",
+  #   publisher: Publisher.find(1),
+  #   price: 1000,
+  # )
+
 end
 
 
