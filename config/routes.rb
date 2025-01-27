@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entries
+  resources :blogs
   resources :todos
   get "profiles/show"
   get "profiles/edit"

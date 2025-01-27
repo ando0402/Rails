@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_27_034548) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_27_071000) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -21,6 +21,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_034548) do
   create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "penname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,9 +46,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_034548) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "publisher_id", null: false, default: 0
+    t.bigint "publisher_id", null: false
     t.integer "sales_status"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
+  end
+
+  create_table "entries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "blog_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_entries_on_blog_id"
   end
 
   create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -76,4 +91,5 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_034548) do
   add_foreign_key "book_authors", "authors"
   add_foreign_key "book_authors", "books"
   add_foreign_key "books", "publishers"
+  add_foreign_key "entries", "blogs"
 end

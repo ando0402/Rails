@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# あらかじめ用意したデータを読み込み
+
+Book.create([ name: 'cool blog2', published_on: '2019-10-24', price: 1000, publisher_id: 1 ])
