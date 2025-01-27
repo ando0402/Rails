@@ -6,10 +6,10 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    user = current_user
+    # user = current_user
     # params[:user] = { name: "bob", email: "bob@example.com" }
     # user.update(params[:user])
-    user.update(user_params)
+    # user.update(user_params)
   end
   private
   # 外部から渡されたパラメータをそのまま信用せず、
