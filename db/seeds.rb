@@ -9,5 +9,5 @@
 #   end
 
 # あらかじめ用意したデータを読み込み
-
+# Blog.create([ name: 'cool blog' ])
 Book.create([ name: 'cool blog2', published_on: '2019-10-24', price: 1000, publisher_id: 1 ])
