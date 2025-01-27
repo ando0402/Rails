@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   around_action :action_logger, only: [ :destroy ]
 
   def show
-    render :show
+    # render :show
     # respond_to do |format|
     #   format.html
     #   format.json
@@ -15,6 +15,14 @@ class BooksController < ApplicationController
     # respond_to do |format|
     #   format.html
     #   format.json { render json: @book }
+    # end
+
+    # UAがiPhoneだった場合
+    # respond_to do |format|
+    #   format.html do |html|
+    #     html.mobile {redirect_to profile_path }
+    #   end
+    #   format.json {render json: @book}
     # end
   end
 
