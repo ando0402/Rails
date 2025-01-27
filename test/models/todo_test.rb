@@ -1,7 +1,30 @@
 require "test_helper"
 
 class TodoTest < ActiveSupport::TestCase
-  # test "the truth" do
+  test "the truth" do
+    assert true
+  end
+
+  # sleep処理
+  # 並列度の動作確認用
+  # test "sleep 1" do
+  #   sleep 3
   #   assert true
   # end
+  #
+  # test "sleep 2" do
+  #   sleep 3
+  #   assert true
+  # end
+  #
+  # test "sleep 3" do
+  #   sleep 3
+  #   assert true
+  # end
+  #
+  # test "sleep 4" do
+  #   sleep 3
+  #   assert true
+  # end
+
 end

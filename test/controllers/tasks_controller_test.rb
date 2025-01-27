@@ -3,7 +3,12 @@ require "test_helper"
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @task = tasks(:one)
+    # puts "call steup"
   end
+
+  # teardown do
+  #   puts "call teardown"
+  # end
 
   test "should get index" do
     get tasks_url
