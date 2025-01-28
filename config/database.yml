@@ -21,3 +21,22 @@ production:
   database: app_production
   username: app
   password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+
+# example replica
+# 1 .primaryとprimary_replicaのデータベース名は同じにすべきです。
+#    primaryとreplicaが同じデータを持つからです.(database my_primary_database)
+# 2 writerとreplicaでは異なるデータベースユーザー名を使いかつreplicaのパーミッションは（writeではなく）readのみにすべきです。
+#
+#  option schema_dump: false
+#
+#  primary:
+#    database: my_primary_database
+#    username: root
+#    password: <%#= ENV['ROOT_PASSWORD'] %>
+#    adapter: mysql2
+#  primary_replica:
+#    database: my_primary_database
+#    username: root_readonly
+#    password: <%#= ENV['ROOT_READONLY_PASSWORD'] %>
+#    adapter: mysql2
+#    replica: true
