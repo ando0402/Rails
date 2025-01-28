@@ -7,9 +7,16 @@ default: &default
   password: <%= ENV.fetch("MYSQL_ROOT_PASSWORD") { '' } %> #.env 環境変数を参照
   host: db #docker-compose.ymlのDBのサービス名を指定
 
+
 development:
-  <<: *default
-  database: <%= ENV.fetch("MYSQL_DB") { '' } %>_development #.env 環境変数を参照
+  primary:
+    <<: *default
+    database: <%= ENV.fetch("MYSQL_DB") { '' } %>_development #.env 環境変数を参照
+#  rails db:create:sub
+  sub:
+    <<: *default
+    database: <%= ENV.fetch("MYSQL_DB") { '' } %>_sub_development #.env 環境変数を参照
+    migrations_paths: db/sub_migrate
 
 test:
   <<: *default
