@@ -29,6 +29,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       TZ: "Asia/Tokyo"
     ports:
-      - "${MYSQL_POOT}:3306" # 環境変数から参照
+      - "${MYSQL_PORT}:3306" # 環境変数から参照
 volumes:
   db-data:
