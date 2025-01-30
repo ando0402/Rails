@@ -16,7 +16,7 @@ development:
     adapter: mysql2
 #    port: 33061
   primary_replica:
-    database: <%= ENV.fetch("MYSQL_DB") { '' } %>_development #.env 環境変数を参照
+    database: <%= ENV.fetch("MYSQL_DB") { '' } %>_replica_development #.env 環境変数を参照
     adapter: mysql2
 #    port: 33062
     replica: true

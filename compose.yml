@@ -20,7 +20,7 @@ services:
   # MySQLの設定
   db:
     container_name: rails_db
-    image: mysql:8.0
+    image: mysql:latest
     volumes:
       - db-data:/var/lib/mysql
     environment:
