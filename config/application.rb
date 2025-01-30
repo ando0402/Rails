@@ -26,6 +26,6 @@ module Blog
 
     # config.active_record.writing_role = :default
     config.active_record.writing_role = :writable
-    config.active_record.reading_role = :readonly
+    # config.active_record.reading_role = :readonly
   end
 end
