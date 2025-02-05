@@ -9,4 +9,5 @@
 :concurrency: 10
 :queues:
   - default
+  - async_log
   - mailers
