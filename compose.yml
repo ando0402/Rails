@@ -44,6 +44,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.sidekiq.dev
+#      dockerfile: docker/sidekiq/Dockerfile
     volumes:
       - .:/app
     depends_on:
