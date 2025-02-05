@@ -4,7 +4,8 @@ services:
     build:
       context: .
       # プロジェクト作成時はcommandをコメントアウト（コンテナが立ち上がらないため）
-      dockerfile: docker/web/dev/Dockerfile
+      dockerfile: Dockerfile.dev
+#      dockerfile: docker/web/dev/Dockerfile
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/app
@@ -38,24 +39,16 @@ services:
     command: redis-server --appendonly yes
     ports:
       - "6379:6379"
-#  sidekiq:
-#    container_name: rails_sidekiq
-#    build:
-#      context: .
-#      dockerfile: docker/sidekiq/Dockerfile
-#    volumes:
-#      - .:/app
-#    depends_on:
-#      - redis
-#      - db
-#  sidekiq:
-#    build: .
-#    command: bundle exec sidekiq
-#    volumes:
-#      - .:/app
-#    depends_on:
-#      - db
-#      - redis
+  sidekiq:
+    container_name: rails_sidekiq
+    build:
+      context: .
+      dockerfile: Dockerfile.sidekiq.dev
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - db
 volumes:
   db-data:
   redis_volume:
