@@ -1,10 +1,12 @@
-:concurrency: 3
-:queues:
-  - default
-#:verbose: false
-#:pidfile: ./tmp/pids/sidekiq.pid
-#:logfile: ./log/sidekiq.log
-#:concurrency: 10
+# concurrency キューサービスに保持できるjobの数
+# queues 使用するキューの種類
+#:concurrency: 3
 #:queues:
 #  - default
-#  - mailers
+:verbose: false
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:concurrency: 10
+:queues:
+  - default
+  - mailers
