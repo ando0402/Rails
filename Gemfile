@@ -73,3 +73,5 @@ gem "cssbundling-rails", "~> 1.4"
 gem "propshaft", "~> 1.1"
 
 gem "sidekiq", "~> 7.3"
+
+gem "sidekiq-scheduler", "~> 5.0"

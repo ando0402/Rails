@@ -103,6 +103,11 @@ GEM
     drb (2.2.1)
     erubi (1.13.0)
     erubis (2.7.0)
+    et-orbi (1.2.11)
+      tzinfo
+    fugit (1.11.1)
+      et-orbi (~> 1, >= 1.2.11)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -182,6 +187,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.7)
     rack-session (2.0.0)
@@ -264,6 +270,8 @@ GEM
       racc (~> 1.5)
       sexp_processor (~> 4.16)
     rubyzip (2.3.2)
+    rufus-scheduler (3.9.2)
+      fugit (~> 1.1, >= 1.11.1)
     securerandom (0.3.1)
     selenium-webdriver (4.24.0)
       base64 (~> 0.2)
@@ -278,6 +286,10 @@ GEM
       logger
       rack (>= 2.2.4)
       redis-client (>= 0.22.2)
+    sidekiq-scheduler (5.0.6)
+      rufus-scheduler (~> 3.2)
+      sidekiq (>= 6, < 8)
+      tilt (>= 1.4.0, < 3)
     slim (5.2.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -348,6 +360,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   selenium-webdriver
   sidekiq (~> 7.3)
+  sidekiq-scheduler (~> 5.0)
   slim-rails
   stimulus-rails
   turbo-rails
