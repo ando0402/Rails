@@ -27,5 +27,10 @@ module Blog
     # config.active_record.writing_role = :default
     config.active_record.writing_role = :writable
     # config.active_record.reading_role = :readonly
+
+    # 必ずアダプタのgemをGemfileに追加し、
+    # アダプタ固有のインストールおよびデプロイメント手順を実行すること
+    config.active_job.queue_adapter = :sidekiq
   end
 end
+
