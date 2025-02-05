@@ -30,5 +30,22 @@ services:
       TZ: "Asia/Tokyo"
     ports:
       - "${MYSQL_PORT}:3306" # 環境変数から参照
+  redis:
+    container_name: rails_redis
+    image: redis:latest
+    volumes:
+      - redis_volume:/data
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+#  sidekiq:
+#    build: .
+#    command: bundle exec sidekiq
+#    volumes:
+#      - .:/app
+#    depends_on:
+#      - db
+#      - redis
 volumes:
   db-data:
+  redis_volume:
