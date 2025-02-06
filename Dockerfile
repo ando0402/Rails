@@ -12,11 +12,14 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 WORKDIR /rails
 
 # Install base packages
+# Date 2024/2/6 add libvips42
 RUN apt-get update -qq && \
     apt-get install -y default-mysql-client \
     apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
     apt-get install -y default-mysql-client && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install -y --no-install-recommends libvips42 && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives \
+
 
 # Set production environment
 ENV RAILS_ENV="production" \
