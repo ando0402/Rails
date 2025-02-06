@@ -10,7 +10,6 @@ class AsyncLogJob < ApplicationJob
     else
       :default
     end
-    end
   end
 
   def perform(message: "hello") # message引数を追加
