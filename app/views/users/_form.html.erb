@@ -26,9 +26,14 @@
     <%= form.text_field :email %>
   </div>
 
+<!--  <div>-->
+    <%#= form.label :portrait, style: "display: block" %>
+    <%#= form.file_field :portrait %>
+<!--  </div>-->
+
   <div>
     <%= form.label :portrait, style: "display: block" %>
-    <%= form.file_field :portrait %>
+    <%= form.file_field :portrait, direct_upload: true %>
   </div>
 
   <div>
