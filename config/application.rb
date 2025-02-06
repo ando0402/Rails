@@ -31,6 +31,7 @@ module Blog
     # 必ずアダプタのgemをGemfileに追加し、
     # アダプタ固有のインストールおよびデプロイメント手順を実行すること
     config.active_job.queue_adapter = :sidekiq
+    config.active_storage.variant_processor = :vips
   end
 end
 
