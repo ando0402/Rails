@@ -12,6 +12,11 @@ class AsyncLogJob < ApplicationJob
     end
   end
 
+  # ジョブの例外処理
+  retry_on StandardError, wait: :exponentially_longer, attempts: 3
+  # 複数の例外クラスを指定することも可能
+  # retry_on ArgumentError, ZeroDivisionError,wait:5.seconds, attempts: 3
+
   def perform(message: "hello") # message引数を追加
     # Do something later
     AsyncLog.create!(message: message) # DBに保存する
