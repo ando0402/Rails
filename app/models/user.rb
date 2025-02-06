@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, presence: true
+  validates :name, presence: true
   has_one_attached :portrait
   # thumb
   has_one_attached :portrait do |attachable|
