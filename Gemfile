@@ -31,7 +31,7 @@ gem "html2haml"
 
 # Template engine gem "slim"
 # slim-rails provides Slim generators for Rails
-gem "slim-rails"
+# gem "slim-rails"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
