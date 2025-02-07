@@ -3,6 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Prepare the ingress controller used to receive mail
   # config.action_mailbox.ingress = :relay
+  # Corporate account
   # Mailgun
   # config.action_mailbox.ingress = :mailgun
   # Postfix
