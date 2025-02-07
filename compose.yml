@@ -50,6 +50,18 @@ services:
     depends_on:
       - redis
       - db
+  mailcatcher:
+    container_name: rails_mailcatcher
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1026:1026"
+    networks:
+      - default
+      - rails_default #snowboardアプリのネットワーク名
+networks:
+  rails_default:
+    external: true
 volumes:
   db-data:
   redis_volume:
