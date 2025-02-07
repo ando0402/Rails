@@ -81,7 +81,14 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   # Action_Mailer
-  config.action_mailer.delivery_method = :file
+  # config.action_mailer.delivery_method = :file
+
+  # mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings   = {
+    address: "mailcatcher",
+    port: 1026
+  }
   # config.action_mailer.file_settings = { location: Rails.root.join("log/mails") } # ファイル保存パスの指定
   # 指定しないとデフォルトではtmp/mails以下に保存される
 
