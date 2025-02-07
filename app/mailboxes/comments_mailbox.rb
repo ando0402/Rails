@@ -19,4 +19,10 @@ class CommentsMailbox < ApplicationMailbox
     return @commenter if defined?(@commenter)
     @commenter = User.find_by(email: mail.from)
   end
+
+  # 書き込み先boardオブジェクトを取得
+  def board
+    return @board if defined?(@board)
+    @board = Board.find_by(id: mail.to.split("-")[0])
+  end
 end
