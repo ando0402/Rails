@@ -85,4 +85,14 @@ Rails.application.configure do
   # config.action_mailer.file_settings = { location: Rails.root.join("log/mails") } # ファイル保存パスの指定
   # 指定しないとデフォルトではtmp/mails以下に保存される
 
+  # config.action_mailer.smtp_settings = {
+  #   user_name: Rails.application.credentials.smtp_user_name,
+  #   password:  Rails.application.credentials.smtp_password,
+  #   domain:         "perfect_rails.example.com",
+  #   address:        "smtp.sendgrid.net",
+  #   port:           587,
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
+
 end
