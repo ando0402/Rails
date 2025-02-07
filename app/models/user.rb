@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true
+  has_many :comments
   has_one_attached :portrait
   # thumb
   has_one_attached :portrait do |attachable|
