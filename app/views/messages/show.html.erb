@@ -2,7 +2,11 @@
 
 <%= render @message %>
 
+<!--リッチテキストコンテンツの表示-->
+<%#= @message.content %>
+
 <div>
+
   <%= link_to "Edit this message", edit_message_path(@message) %> |
   <%= link_to "Back to messages", messages_path %>
 
