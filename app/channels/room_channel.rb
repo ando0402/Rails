@@ -13,7 +13,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   # 実行
-  def speak
+  def speak(data)
     message = Message.create!(content: data["message"])
     ActionCable.server.broadcast(
       # "room_channel", { message: data["message"] }
