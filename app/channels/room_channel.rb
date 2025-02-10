@@ -15,7 +15,7 @@ class RoomChannel < ApplicationCable::Channel
   # 実行
   def speak
     ActionCable.server.broadcast(
-      "room_channel", message: data["message"]
+      "room_channel", { message: data["message"] }
     )
   end
 end
