@@ -15,11 +15,11 @@ window.App = consumer.subscriptions.create("RoomChannel", {
   // 受信
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    alert(data["message"])
+    alert(data["message"]);
   },
 
   speak: function(message) {
     // return this.perform('speak');
-    return this.perform("speak", {message: message})
+  return this.perform('speak', ["message", message]);
   }
 });
