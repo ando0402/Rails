@@ -1,7 +1,7 @@
 import consumer from "./consumer"
 // クライアントサイド
-// consumer.subscriptions.create("RoomChannel", {
-window.App = consumer.subscriptions.create("RoomChannel", {
+consumer.subscriptions.create("RoomChannel", {
+// window.App = consumer.subscriptions.create("RoomChannel", {
   // 接続
   connected() {
     // Called when the subscription is ready for use on the server
