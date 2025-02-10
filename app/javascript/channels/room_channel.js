@@ -1,5 +1,5 @@
 import consumer from "./consumer"
-
+// クライアントサイド
 consumer.subscriptions.create("RoomChannel", {
   // 接続
   connected() {
@@ -14,9 +14,11 @@ consumer.subscriptions.create("RoomChannel", {
   // 受信
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    alert(data["message"])
   },
 
   speak: function() {
-    return this.perform('speak');
+    // return this.perform('speak');
+    return this.perform("speak", {message: message})
   }
 });
