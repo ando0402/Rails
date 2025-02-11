@@ -15,6 +15,10 @@ module ApplicationCable
       assert_equal connection.current_user.id, user.id
     end
 
+    test 'connection rejects' do
+      cookies.signed[:user_id] = nil
+      assert_reject_connection { connect }
+    end
 
     # test "connects with cookies" do
     #   cookies.signed[:user_id] = 42
