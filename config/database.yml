@@ -7,7 +7,7 @@ default: &default
   password: <%= ENV.fetch("MYSQL_ROOT_PASSWORD") { '' } %> #.env 環境変数を参照
   host: db #docker-compose.ymlのDBのサービス名を指定
   # action_cable worker
-  config.action_cable.worker_pool_size = 10
+#  config.action_cable.worker_pool_size = 10
 # command rails db:create:sub
 
 development:
