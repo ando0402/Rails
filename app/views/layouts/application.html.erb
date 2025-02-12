@@ -25,9 +25,9 @@
       <%= link_to "AWS" ,root_path ,class: "navbar-brand" %>
     </nav>
 
-    <%= if flash.notice %>
-      <div class="alert alert-success"></div>
-    <% end %>
+    <%#= if flash.notice %>
+<!--      <div class="alert alert-success"></div>-->
+    <%# end %>
 
     <% if logged_in? %>
       <%= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
