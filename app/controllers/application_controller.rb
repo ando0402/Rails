@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+
+  # ログイン
+  def logged_in?
+    !!session[:user_id]
+  end
+
   def detect_mobile_variant
     request.variant = :mobile if request.user_agent =~ /iPhone/
   end
