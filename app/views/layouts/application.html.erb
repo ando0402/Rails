@@ -29,13 +29,17 @@
 <!--      <div class="alert alert-success"></div>-->
     <%# end %>
 
-    <% if logged_in? %>
-      <%= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
-    <% else %>
-      <ul>
-        <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
-      </ul>
-    <% end %>
+
+    <%= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
+    <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
+
+    <%# if logged_in? %>
+      <%#= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
+    <%# else %>
+<!--      <ul>-->
+        <%#= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
+<!--      </ul>-->
+    <%# end %>
 
 
     <%= yield %>
