@@ -30,17 +30,15 @@
     <%# end %>
 
 
-    <%= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
-    <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
+    <%#= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
 
     <%# if logged_in? %>
       <%#= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
     <%# else %>
-<!--      <ul>-->
-        <%#= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
-<!--      </ul>-->
+      <ul>
+        <%= link_to "GitHUBでログイン", "/auth/github", class:"nav-link", method: :post %>
+      </ul>
     <%# end %>
-
 
     <%= yield %>
   </body>
