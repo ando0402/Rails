@@ -24,6 +24,9 @@
     <nav>
       <%= link_to "AWS" ,root_path ,class: "navbar-brand" %>
     </nav>
+    <ul>
+      <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
+    </ul>
     <%= yield %>
   </body>
 </html>
