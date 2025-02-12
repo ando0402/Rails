@@ -27,6 +27,9 @@
     <ul>
       <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
     </ul>
+    <% if flash.notice %>
+      <div class="alert alert-success"></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
