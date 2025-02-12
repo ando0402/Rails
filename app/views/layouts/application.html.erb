@@ -24,12 +24,20 @@
     <nav>
       <%= link_to "AWS" ,root_path ,class: "navbar-brand" %>
     </nav>
-    <ul>
-      <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
-    </ul>
-    <% if flash.notice %>
+
+    <%= if flash.notice %>
       <div class="alert alert-success"></div>
     <% end %>
+
+    <% if logged_in? %>
+      <%= link_to "ログアウト", logout_path, class:"nav-link", method: :delete %>
+    <% else %>
+      <ul>
+        <%= link_to "GitHUBでログイン" "/auth/github", class:"nav-link", method: :post %>
+      </ul>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
