@@ -9,8 +9,7 @@ class CreateEvents < ActiveRecord::Migration[7.2]
       t.text :content
 
       t.timestamps
-
-      add_index :events, :owner_id
     end
+      add_index :events, :owner_id
   end
 end
