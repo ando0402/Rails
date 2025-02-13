@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :require_login
   before_action :detect_mobile_variant
   helper_method :logged_in?
+  include SessionsHelper
 
   def require_login
     # ログインを確認し、非ログイン時にリダイレクトする処理
