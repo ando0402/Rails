@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  skip_before_action :authenticate, only: :create
   # Login
   def create
     ActiveRecord::Base.connected_to(role: :writing) do
