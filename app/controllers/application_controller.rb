@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   before_action :require_login
   before_action :detect_mobile_variant
+  helper_method :logged_in?
 
   def require_login
     # ログインを確認し、非ログイン時にリダイレクトする処理
