@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   # get "/auth/:provider/callback" => "sessions#create"
   get "auth/:provider/callback", to: "sessions#create"
   get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
   # リダイレクト処理
