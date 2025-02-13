@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   before_action :require_login
   before_action :detect_mobile_variant
-  helper_method :logged_in?
   include SessionsHelper
+  before_action :authenticate
+  helper_method :logged_in?, :current_user
 
   def require_login
     # ログインを確認し、非ログイン時にリダイレクトする処理
@@ -18,7 +19,18 @@ class ApplicationController < ActionController::Base
 
   # ログイン
   def logged_in?
+    !!current_user
     !!session[:user_id]
+  end
+
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
+  def authenticate
+    return if logged_in?
+    redirect_to_root_path, alert = "ログインしてください"
   end
 
   def detect_mobile_variant
