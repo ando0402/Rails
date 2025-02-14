@@ -1,0 +1,13 @@
+<!--now = Time.zone.now-->
+
+<h1>イベント作成</h1>
+
+<%= form_with model: @event do |f| %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :place %>
+  <%= f.label :start_at %>
+
+
+
+<% end %>
