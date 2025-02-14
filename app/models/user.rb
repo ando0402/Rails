@@ -2,6 +2,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :comments
   has_one_attached :portrait
+  has_many :created_events, class_name: "Event", foreign_key: "owner_id"
+
   # thumb
   has_one_attached :portrait do |attachable|
     attachable.variant :thumb, resize_to_limit: [ 100, 100 ]
