@@ -101,6 +101,8 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.1)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.13.0)
     erubis (2.7.0)
     et-orbi (1.2.11)
@@ -401,6 +403,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails (~> 1.4)
   debug
+  erb2haml
   html2haml
   image_processing (~> 1.2)
   importmap-rails
