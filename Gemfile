@@ -72,7 +72,7 @@ gem "cssbundling-rails", "~> 1.4"
 # Assets Pipeline
 gem "propshaft", "~> 1.1"
 
-gem "sidekiq", "~> 7.3"
+gem "sidekiq", "~> 8.0"
 
 gem "sidekiq-scheduler", "~> 6.0"
 
