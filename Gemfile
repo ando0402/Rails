@@ -70,7 +70,7 @@ end
 gem "cssbundling-rails", "~> 1.4"
 
 # Assets Pipeline
-gem "propshaft", "~> 1.1"
+gem "propshaft", "~> 1.2"
 
 gem "sidekiq", "~> 8.0"
 
