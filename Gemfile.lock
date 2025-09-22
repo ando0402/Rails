@@ -175,7 +175,8 @@ GEM
     msgpack (1.8.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
-    mysql2 (0.5.6)
+    mysql2 (0.5.7)
+      bigdecimal
     net-http (0.6.0)
       uri
     net-imap (0.5.9)
@@ -387,7 +388,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jsbundling-rails
-  mysql2 (~> 0.5.6)
+  mysql2 (~> 0.5.7)
   omniauth (~> 2.1)
   omniauth-github (~> 2.0)
   omniauth-rails_csrf_protection (~> 1.0)
